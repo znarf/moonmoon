@@ -16,6 +16,7 @@ $opml_people = $opml->getPeople();
 
     <title>moonmoon administration</title>
     <link rel="stylesheet" media="screen" type="text/css" href="default.css" />
+    <?php include("inc/head.inc.php");  ?>
     <script>
     window.onload = function(){
         var formManage = document.getElementById('frmPurge');
@@ -27,13 +28,16 @@ $opml_people = $opml->getPeople();
 </head>
 
 <body id="admin-admin">
+
+    <?php include("inc/top.inc.php");  ?>
+
     <div id="page">
         <div id="header">
             <h1>moonmoon</h1>
             <p><a href="../">Back to main page</a></p>
         </div>
-        
-        <?php readfile("inc/nav.inc.php");  ?>
+
+        <?php include("inc/nav.inc.php");  ?>
 
         <div id="content">
             <div class="widget">
@@ -43,14 +47,10 @@ $opml_people = $opml->getPeople();
                     <p class="help">Purging the cache will make moonmoon reload all feeds.</p>
                 </form>
             </div>
-            
-            <div class="widget">
-                <h3>Change administration password</h3>
-                <form action="changepassword.php" method="post" id="frmPassword">
-                    <p><label for="password">New password:</label> <input type="password" class="text" value="" name="password" id="password" size="20" /> <input type="submit" class="submit delete" name="changepwd" id="changepwd" value="Change password" /></p>
-                </form>
-            </div>
         </div>
     </div>
+
+    <?php include("inc/footer.inc.php");  ?>
+
 </body>
 </html>

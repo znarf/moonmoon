@@ -1,5 +1,7 @@
 <?php
-setcookie('auth','', time()-3600);
-header('Location: login.php');
-die;
-?>
+
+require_once(dirname(__FILE__) . '/../dist/prepend.php');
+
+Ld_Auth::logout();
+
+header('Location:' . $application->getUrl());

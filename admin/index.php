@@ -35,16 +35,21 @@ header('Content-type: text/HTML; charset=UTF-8');
 
     <title>moonmoon administration</title>
     <link rel="stylesheet" media="screen" type="text/css" href="default.css" />
+
+    <?php include("inc/head.inc.php");  ?>
 </head>
 
 <body id="admin-feed">
+
+    <?php include("inc/top.inc.php");  ?>
+
     <div id="page">
         <div id="header">
             <h1>moonmoon</h1>
             <p><a href="../">Back to main page</a></p>
         </div>
-        
-        <?php readfile("inc/nav.inc.php");  ?>
+
+        <?php include("inc/nav.inc.php");  ?>
 
         <div id="content">
             <div class="widget">
@@ -63,7 +68,7 @@ header('Content-type: text/HTML; charset=UTF-8');
                 <h3>Manage existing feeds</h3>
                 <form action="subscriptions.php" method="post" id="feedmanage">
                 <p class="action">
-                <span class="count">Number of feeds: <?php echo count($everyone); ?></span> 
+                <span class="count">Number of feeds: <?php echo count($everyone); ?></span>
                 <input type="submit" class="submit save" name="save" id="save" value="Save changes" />
                 <input type="submit" class="submit delete" name="delete" id="delete" value="Delete selected" />
                 </p>
@@ -79,7 +84,7 @@ header('Content-type: text/HTML; charset=UTF-8');
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
+                        <?php
                         $i = 0;
                         foreach ($everyone as $opml_person){
                         $i++;
@@ -88,7 +93,7 @@ header('Content-type: text/HTML; charset=UTF-8');
                             <td><input type="checkbox" class="checkbox" name="opml[<?php echo $i; ?>][delete]" /></td>
                             <td><input type="text" size="10" class="text" name="opml[<?php echo $i; ?>][name]" value="<?php echo $opml_person->getName(); ?>" /></td>
                             <td>
-                                <?php 
+                                <?php
                                 $items = $opml_person->get_items();
                                 if (count($items) > 0) {
                                     echo $items[0]->get_date();
@@ -107,7 +112,9 @@ header('Content-type: text/HTML; charset=UTF-8');
             </div>
         </div>
     </div>
-    
+
+    <?php include("inc/footer.inc.php");  ?>
+
     <script>
     var allCheckboxes = function(status){
         var form = document.getElementById('feedmanage');
@@ -118,7 +125,7 @@ header('Content-type: text/HTML; charset=UTF-8');
             }
         }
     }
-    
+
     window.onload = function(){
         //Select/unselect rows
         var form = document.getElementById('feedmanage');
@@ -135,12 +142,12 @@ header('Content-type: text/HTML; charset=UTF-8');
                 }
             }
         }
-    
+
         var btSelectall = document.getElementById('selectall');
         btSelectall.onclick = function(){
             allCheckboxes('checked');
         }
-        
+
         var btSelectnone = document.getElementById('selectnone');
         btSelectnone.onclick = function(){
             allCheckboxes('');
