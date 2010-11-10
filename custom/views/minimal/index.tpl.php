@@ -20,18 +20,18 @@ header('Content-type: text/html; charset=UTF-8');
     <div id="page">
 
         <?php include(dirname(__FILE__).'/top.tpl.php'); ?>
-        
+
         <div id="content">
             <?php if (0 == count($items)) : ?>
-                <div class="article" class="h6e-block">
-                    <h2 class="article-title h6e-entry-title">
-                        No article
-                    </h2>
-                    <p class="article-content">No news, good news.</p>
+                <div class="article h6e-block">
+                    <h2 class="article-title h6e-entry-title">No article</h2>
+                    <div class="article-content h6e-post-content">
+                        <p>No news, good news.</p>
+                    </div>
                 </div>
             <?php else : ?>
                 <?php foreach ($items as $item): ?>
-                    <?php 
+                    <?php
                     $arParsedUrl = parse_url($item->get_feed()->getWebsite());
                     $host = 'from-' . preg_replace('/[^a-zA-Z0-9]/i', '-', $arParsedUrl['host']);
                     ?>
@@ -62,11 +62,11 @@ header('Content-type: text/html; charset=UTF-8');
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-        
+
         <?php include_once(dirname(__FILE__).'/sidebar.tpl.php'); ?>
-        
+
         <?php include(dirname(__FILE__).'/footer.tpl.php'); ?>
     </div>
-    
+
 </body>
 </html>
