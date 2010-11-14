@@ -6,9 +6,9 @@ header('Content-type: text/html; charset=UTF-8');
 ?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
-    <title><?php echo $PlanetConfig->getName(); ?></title>
-    <?php include(dirname(__FILE__).'/head.tpl.php'); ?>
+<meta charset="utf-8"/>
+<title><?php echo $PlanetConfig->getName(); ?></title>
+<?php include(dirname(__FILE__).'/head.tpl.php'); ?>
 </head>
 
 <body class="h6e-layout">
