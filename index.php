@@ -8,6 +8,11 @@ if ($debug) {
     error_reporting(0);
 }
 
+$prepend = dirname(__FILE__).'/dist/prepend.php';
+if (file_exists($prepend)) {
+    include_once($prepend); 
+}
+
 include_once(dirname(__FILE__).'/app/classes/Planet.class.php');
 include_once(dirname(__FILE__).'/app/lib/Cache.php');
 
