@@ -6,4 +6,6 @@
     <h1 id="top" class="h6e-page-title"><a href="./"><?php echo $PlanetConfig->getName(); ?></a></h1>
 </div>
 
+<?php Ld_Ui::topNav(); ?>
+
 <div id="container">
