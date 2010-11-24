@@ -4,7 +4,7 @@ usort($all_people, array('PlanetPerson', 'compare'));
 ?>
 <div id="sidebar" class="aside">
     <div id="sidebar-people" class="section h6e-block">
-        <h2 class="h6e-extra-title">Subscriptions</h2>
+        <h3 class="h6e-extra-title">Subscriptions</h3>
         <ul>
             <?php foreach ($all_people as $person) : ?>
             <li>
@@ -19,7 +19,7 @@ usort($all_people, array('PlanetPerson', 'compare'));
     </div>
     
     <div class="section h6e-block">
-        <h2 class="h6e-extra-title">Syndicate</h2>
+        <h3 class="h6e-extra-title">Syndicate</h3>
         <ul>
             <li><img src="custom/img/feed.png" alt="feed" height="12" width="12" />&nbsp;<a href="?type=atom10">Feed (ATOM)</a></li>
         </ul>
@@ -27,7 +27,7 @@ usort($all_people, array('PlanetPerson', 'compare'));
 
     <?php if ($application->getUserRole() == 'administrator') : ?>
     <div class="section h6e-block">
-        <h2 class="h6e-extra-title">Meta</h2>
+        <h3 class="h6e-extra-title">Meta</h3>
         <ul>
             <li><a href="./admin/">Administration</a></li>
         </ul>
