@@ -13,3 +13,5 @@ if ($colors['ld-colors-background'] != $colors['ld-colors-background-3'] || $col
 </style>
 
 <link rel="alternate" type="application/atom+xml" title="ATOM" href="?type=atom10" />
+
+<script type="text/javascript" src="<?php echo Ld_Ui::getJsUrl('/jquery/jquery.js', 'js-jquery') ?>"></script>
