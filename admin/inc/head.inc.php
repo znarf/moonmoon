@@ -9,4 +9,5 @@ if (defined('LD_APPEARANCE') && constant('LD_APPEARANCE')) {
 body { margin-top:30px; margin-bottom:60px; }
 p.logout { display:none; }
 </style>
+<script type="text/javascript" src="<?php echo Ld_Ui::getJsUrl('/jquery/jquery.js', 'js-jquery') ?>"></script>
 <?php endif ?>
